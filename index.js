@@ -1,8 +1,8 @@
 // 1. Imports (sempre no topo)
-const app = express()
-const port = 3000
 const express = require('express')
 const {engine} = require('express-handlebars')
+const app = express()
+const port = 3000
 const mysql = require('mysql2')
 const { dbPassword } = require('./config')
 
