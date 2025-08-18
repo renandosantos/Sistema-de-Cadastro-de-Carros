@@ -10,6 +10,7 @@ const { dbPassword } = require('./config')
 app.engine('handlebars', engine())
 app.set('view engine', 'handlebars')
 app.use(express.static('public'))
+app.use(express.urlencoded({ extended: true }));
 
 // 3. Nosso "banco de dados" de produtos
 const con = mysql.createConnection({
@@ -26,6 +27,38 @@ app.get('/', (req,res) =>{
 
 app.get('/cars/add', (req, res) =>{
     res.render('addcar')
+})
+
+app.get('/cars', (req, res) =>{
+    const sql = 'SELECT * FROM cars'
+
+    con.query(sql, function(err, data){
+        if(err){
+            console.log(err)
+            return
+        }
+        res.render('listcars', { cars: data })
+    })
+    
+})
+
+app.post('/cars/add', (req, res) => {
+    const modelo = req.body.modelo
+    const marca = req.body.marca
+    const ano = req.body.ano
+    const cor = req.body.cor
+console.log(req.body)
+
+const sql = `INSERT  INTO cars(modelo, marca, cor, ano) VALUES('${modelo}', '${marca}', '${cor}', ${ano})`
+
+con.query(sql, function(err, result){
+    if(err){
+        console.log(err)
+        return
+    }
+    res.redirect('/cars/add')
+})
+
 })
 
 // 5. Iniciar o Servidor (sempre no final)

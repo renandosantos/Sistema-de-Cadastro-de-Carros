@@ -1,0 +1,13 @@
+<h1>Carros Cadastrados</h1>
+
+{{#if cars}}
+    <ul>
+        {{#each cars}}
+            <li>
+                Modelo: {{modelo}} | Marca: {{marca}} | Ano: {{ano}} | Cor: {{cor}}
+            </li>
+        {{/each}}
+    </ul>
+{{else}}
+    <p>Nenhum carro cadastrado ainda.</p>
+{{/if}}
