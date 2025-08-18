@@ -1,0 +1,31 @@
+/* Definições para o tema escuro */
+body {
+    background-color: #121212; /* Fundo cinza escuro */
+    color: #e0e0e0; /* Cor do texto cinza claro */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo para a barra de navegação */
+header {
+    background-color: #1f1f1f;
+    padding: 10px 20px;
+    border-bottom: 1px solid #333;
+}
+
+nav a {
+    color: #bb86fc; /* Um tom de roxo para os links */
+    margin-right: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #e0e0e0;
+}
+
+/* Estilo para o conteúdo principal */
+main {
+    padding: 20px;
+}
