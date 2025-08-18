@@ -1,0 +1,21 @@
+<h1>Adicionar Novo Carro</h1>
+<form action="/cars/add" method="POST">
+    
+    <div>
+        <label for="modelo">Modelo:</label>
+        <input type="text" name="modelo" placeholder="Ex: Onix" required>
+    </div>
+    <div>
+        <label for="marca">Marca:</label>
+        <input type="text" name="marca" placeholder="Ex: Chevrolet" required>
+    </div>
+    <div>
+        <label for="ano">Ano:</label>
+        <input type="number" name="ano" placeholder="Ex: 2023" required>
+    </div>
+    <div>
+        <label for="cor">Cor:</label>
+        <input type="text" name="cor" placeholder="Ex: Preto" required>
+    </div>
+    <input type="submit" value="Cadastrar Carro">
+</form>

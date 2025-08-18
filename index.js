@@ -24,6 +24,10 @@ app.get('/', (req,res) =>{
     res.render('home')
 })
 
+app.get('/cars/add', (req, res) =>{
+    res.render('addcar')
+})
+
 // 5. Iniciar o Servidor (sempre no final)
 con.connect(function(err) {
     if (err) {
