@@ -10,7 +10,7 @@ const { dbPassword } = require('./config')
 app.engine('handlebars', engine())
 app.set('view engine', 'handlebars')
 app.use(express.static('public'))
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true }))
 
 // 3. Nosso "banco de dados" de produtos
 const con = mysql.createConnection({
@@ -109,12 +109,12 @@ app.post('/cars/remove/:id', (req, res) => {
 con.connect(function(err) {
     if (err) {
         console.log(err);
-        return; // Retorna para parar a execução
+        return 
     }
 
-    console.log('Conectou ao MySQL!');
+    console.log('Conectou ao MySQL!')
 
     app.listen(port, () => {
-        console.log(`APP rodando na porta ${port}`);
-    });
-});
+        console.log(`APP rodando na porta ${port}`)
+    })
+})
