@@ -44,9 +44,9 @@ app.get('/cars', (req, res) =>{
 
 app.get('/cars/edit/:id', (req, res) => {
     const id = req.params.id
-    const sql = `SELECT * FROM cars where id = ${id}`
+    const sql = 'SELECT * FROM cars where id = ?'
 
-    con.query(sql, function(err, data){
+    con.query(sql, [id], function(err, data){
         if(err){
             console.log(err)
             return
@@ -63,9 +63,9 @@ app.post('/cars/add', (req, res) => {
     const cor = req.body.cor
 console.log(req.body)
 
-const sql = `INSERT  INTO cars(modelo, marca, cor, ano) VALUES('${modelo}', '${marca}', '${cor}', ${ano})`
+const sql = 'INSERT  INTO cars(modelo, marca, cor, ano) VALUES(?, ?, ?, ?)'
 
-con.query(sql, function(err, result){
+con.query(sql, [modelo, marca, cor, ano], function(err, result){
     if(err){
         res.redirect('/cars/add')
         return
@@ -82,9 +82,9 @@ app.post('/cars/update', (req, res) => {
     const cor = req.body.cor
 console.log(req.body)
 
-const sql = `UPDATE cars SET modelo = '${modelo}', marca = '${marca}', cor = '${cor}', ano = ${ano} WHERE id = ${id}`
+const sql = 'UPDATE cars SET modelo = ?, marca = ?, cor = ?, ano = ? WHERE id = ?'
 
-con.query(sql, function(err, result){
+con.query(sql, [modelo, marca, cor, ano, id], function(err, result){
     if(err){
         console.log(err)
         return
@@ -95,8 +95,8 @@ con.query(sql, function(err, result){
 
 app.post('/cars/remove/:id', (req, res) => {
     const id = req.params.id
-    const sql = `DELETE FROM cars WHERE id = ${id}`
-    con.query(sql, function(err) { 
+    const sql = 'DELETE FROM cars WHERE id = ?'
+    con.query(sql, [id], function(err) { 
         if(err) { 
         console.log(err) 
         return 
