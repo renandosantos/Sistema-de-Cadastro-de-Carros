@@ -1,0 +1,23 @@
+<h1>Editar Carro</h1>
+
+<form action="/cars/update" method="POST">
+    <input type="hidden" name="id" value="{{car.id}}">
+
+    <div>
+        <label for="modelo">Modelo:</label>
+        <input type="text" name="modelo" value="{{car.modelo}}" required>
+    </div>
+    <div>
+        <label for="marca">Marca:</label>
+        <input type="text" name="marca" value="{{car.marca}}" required>
+    </div>
+    <div>
+        <label for="ano">Ano:</label>
+        <input type="number" name="ano" value="{{car.ano}}" required>
+    </div>
+    <div>
+        <label for="cor">Cor:</label>
+        <input type="text" name="cor" value="{{car.cor}}" required>
+    </div>
+    <input type="submit" value="Atualizar Carro">
+</form>

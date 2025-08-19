@@ -1,13 +1,13 @@
-/* Definições para o tema escuro */
+/* Definições Gerais */
 body {
-    background-color: #121212; /* Fundo cinza escuro */
-    color: #e0e0e0; /* Cor do texto cinza claro */
+    background-color: #121212;
+    color: #e0e0e0;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
 
-/* Estilo para a barra de navegação */
+/* Navegação */
 header {
     background-color: #1f1f1f;
     padding: 10px 20px;
@@ -15,7 +15,7 @@ header {
 }
 
 nav a {
-    color: #bb86fc; /* Um tom de roxo para os links */
+    color: #bb86fc;
     margin-right: 20px;
     text-decoration: none;
     font-weight: bold;
@@ -25,7 +25,124 @@ nav a:hover {
     color: #e0e0e0;
 }
 
-/* Estilo para o conteúdo principal */
+/* Layout Principal e Listagem */
 main {
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    max-width: 600px;
+    width: 100%;
+}
+
+li {
+    background-color: #1f1f1f;
+    border: 1px solid #333;
+    margin-bottom: 8px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li a {
+    color: #bb86fc;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Formulário de Adição e Edição */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #1f1f1f;
+    border-radius: 8px;
+    border: 1px solid #333;
+}
+
+form div {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    background-color: #2b2b2b;
+    color: #e0e0e0;
+    box-sizing: border-box;
+}
+
+/* Botões */
+.actions {
+    display: flex;
+    gap: 5px;
+    align-items: center; /* ALINHA OS ITENS VERTICALMENTE */
+}
+
+
+/* Estilo unificado para todos os botões da lista */
+.edit-btn,
+.delete-btn {
+    border: none;
+    padding: 6px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+/* Cores específicas para os botões */
+.edit-btn {
+    background-color: #bb86fc;
+    color: #121212;
+}
+
+.delete-btn {
+    background-color: #cf6679;
+    color: #121212;
+}
+
+.edit-btn:hover {
+    background-color: #a06dfa;
+}
+
+.delete-btn:hover {
+    background-color: #b05463;
+}
+
+/* Estilo para o botão de submit do formulário de adicionar/editar */
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #bb86fc;
+    color: #121212;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #a06dfa;
 }
