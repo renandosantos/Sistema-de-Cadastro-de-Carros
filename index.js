@@ -67,7 +67,7 @@ const sql = `INSERT  INTO cars(modelo, marca, cor, ano) VALUES('${modelo}', '${m
 
 con.query(sql, function(err, result){
     if(err){
-        console.log(err)
+        res.redirect('/cars/add')
         return
     }
     res.redirect('/cars/add')
